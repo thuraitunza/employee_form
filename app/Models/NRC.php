@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class NRC extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

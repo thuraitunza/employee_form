@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('employees_id')->constrained()->cascadeOnDelete();
+            $table->string('job_title')->nullable();
+            $table->string('company_name')->nullable();
+            $table->date('from_date')->nullable();
+            $table->date('to_date')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->text('address')->nullable();
             $table->timestamps();
         });
     }

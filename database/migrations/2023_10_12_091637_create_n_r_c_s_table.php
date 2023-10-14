@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('n_r_c_s', function (Blueprint $table) {
             $table->id();
+            $table->string('name_en');
+            $table->string('name_mm');
+            $table->integer('nrc_code');
             $table->timestamps();
         });
     }

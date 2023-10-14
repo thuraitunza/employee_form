@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('education', function (Blueprint $table) {
+        Schema::create('postals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employees_id')->constrained()->cascadeOnDelete();
-            $table->string('degree');
-            $table->date('from_year');
-            $table->date('to_year');
-            $table->string('school_college_university');
+            $table->string('region');
+            $table->string('town_township');
+            $table->string('quarter_village_tract');
+            $table->integer('postal_code');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('education');
+        Schema::dropIfExists('postals');
     }
 };

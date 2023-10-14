@@ -1,4 +1,4 @@
-<?php
+cou<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('employees_id')->constrained()->cascadeOnDelete();
+            $table->string('country');
+            $table->string('state');
+            $table->string('township');
+            $table->string('street_address');
             $table->timestamps();
         });
     }
